@@ -38,8 +38,6 @@ $scope.guardar = function(persona){
 
 
 
-
-
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -48,8 +46,28 @@ $scope.guardar = function(persona){
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  
+  
+ /* $scope.chats = Chats.all();*/
+ 
+  $scope.chats = [];
+  
+  
+  $cordovaSQLite.execute(db, 'SELECT * FROM agenda ORDER BY id DESC')
+            .then(
+                function(result) {
 
-  $scope.chats = Chats.all();
+                    if (result.rows.length > 0) {
+
+                        $scope.chats = result.rows;
+                        }
+                },
+                function(error) {
+                    $scope.statusMessage = "Error on loading: " + error.message;
+                }
+            );
+    
+  
   $scope.remove = function(chat) {
     Chats.remove(chat);
   };
