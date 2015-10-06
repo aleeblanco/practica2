@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope,$ionicPopup,$timeout) {
+.controller('DashCtrl', function($scope,$ionicPopup,$timeout,$cordovaSQLite) {
 
 
 
@@ -38,7 +38,7 @@ $scope.guardar = function(persona){
 
 
 
-.controller('ChatsCtrl', function($scope, Chats) {
+.controller('ChatsCtrl', function($scope, $cordovaSQLite) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -48,7 +48,7 @@ $scope.guardar = function(persona){
   //});
   
   
- /* $scope.chats = Chats.all();*/
+ // $scope.chats = Chats.all();
  
   $scope.chats = [];
   
@@ -58,9 +58,14 @@ $scope.guardar = function(persona){
                 function(result) {
 
                     if (result.rows.length > 0) {
-
-                        $scope.chats = result.rows;
+                        for(var i=0;i < result.row.length;i++)
+                        {
+                        $scope.chats.push({"nombre":result.row.item(i).nombre,
+                       "apellido":result.row.item(i).apelldo,
+                       "telefono":result.row.item(i).telefono,
+                       "email":result.row.item(i).email});
                         }
+                    }
                 },
                 function(error) {
                     $scope.statusMessage = "Error on loading: " + error.message;
