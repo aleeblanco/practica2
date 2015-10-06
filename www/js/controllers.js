@@ -58,7 +58,7 @@ $scope.guardar = function(persona){
                 function(result) {
 
                     if (result.rows.length > 0) {
-                        for(var i=0;i < result.row.length;i++)
+                        for(var i = 0; i < result.row.length; i++)
                         {
                         $scope.chats.push({"nombre":result.row.item(i).nombre,
                        "apellido":result.row.item(i).apelldo,
@@ -67,6 +67,7 @@ $scope.guardar = function(persona){
                         }
                     }
                 },
+                
                 function(error) {
                     $scope.statusMessage = "Error on loading: " + error.message;
                 }
