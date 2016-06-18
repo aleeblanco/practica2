@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
     
     $scope.guardar = function(persona){
         
-        $cordovaSQLite.execute(db, 'INSERT INTO agenda (nombre,apellido,telefono,direccion,email,facebook) VALUES (?,?,?,?,?,?)', [persona.nombre,persona.apellido,persona.telefono,persona.direccio,persona.email,persona.facebook])
+        $cordovaSQLite.execute(db, 'INSERT INTO agenda (nombre,apellido,telefono,direccion,email,facebook) VALUES (?,?,?,?,?,?)', [persona.nombre,persona.apellido,persona.telefono,persona.direccion,persona.email,persona.facebook])
         .then(function(result) {
             $scope.statusMessage = "Registro guardado!";
         }, function(error) {
@@ -79,7 +79,7 @@ angular.module('starter.controllers', [])
   
   $scope.guardar=function(persona){
       
-      $cordovaSQLite.execute(db,'UPDATE agenda set nombre=?,apellido=?,telefono=?,direccio=?,email=?,facebook=? where id =?',[persona.nombre,persona.apellido,persona.telefono,persona.direccion,persona.email,persona.facebook,persona.id])
+      $cordovaSQLite.execute(db,'UPDATE agenda set nombre=?,apellido=?,telefono=?,direccion=?,email=?,facebook=? where id =?',[persona.nombre,persona.apellido,persona.telefono,persona.direccion,persona.email,persona.facebook,persona.id])
       .then(function(result){
          $scope.statusMessage="Registro guardado!";
       },function(error){
