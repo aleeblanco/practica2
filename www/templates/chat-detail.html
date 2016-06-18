@@ -25,16 +25,30 @@
    </label>
    
    <label class="item item-input">
+      <span class="input-label">Direccion</span>
+      <input type="dir" name="direccion"   ng-model="persona[0].direccion" required>
+   </label>
+   
+   <label class="item item-input">
       <span class="input-label">Email</span>
       <input type="text" name="email"  ng-model="persona[0].email" required>
    </label>
+   
+   <label class="item item-input">
+      <span class="input-label">Facebook</span>
+      <input type="face" name="facebook"   ng-model="persona[0].facebook" required>
+   </label>
+   
    </div>
    
    <div class="padding">
         <p ng-show="agregarForm.nombre.$error.required">Escriba el nombre</p>
         <p ng-show="agregarForm.apellido.$error.required">Escriba el apellido</p>
         <p ng-show="agregarForm.telefono.$error.required">Escriba el telefono</p>
+        <p ng-show="agregarForm.direccion.$error.required">Escriba el direccion</p>
         <p ng-show="agregarForm.email.$error.required">Escriba el email</p>
+        <p ng-show="agregarForm.facebook.$error.required">Escriba el facebook</p>
+        
         <p>{{ statusMessage }}</p>
     </div>
    

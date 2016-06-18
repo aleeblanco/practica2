@@ -23,7 +23,9 @@ angular.module('starter.services', [])
                                     "nombre":result.rows.item(i).nombre,
                                     "apellido":result.rows.item(i).apellido,
                                     "telefono":result.rows.item(i).telefono,
-                                    "email":result.rows.item(i).email});
+                                    "direccion":result.rows.item(i).direccion,
+                                    "email":result.rows.item(i).email,
+                                    "facebook":result.rows.item(i).facebook, });
                       }
                     }
                 },
@@ -58,7 +60,9 @@ angular.module('starter.services', [])
                                     "nombre":result.rows.item(0).nombre,
                                     "apellido":result.rows.item(0).apellido,
                                     "telefono":result.rows.item(0).telefono,
-                                    "email":result.rows.item(0).email});                 
+                                    "direccion":result.rows.item(0).direccion,
+                                    "email":result.rows.item(0).email,
+                                    "facebook":result.rows.item(0).facebook, });                 
                 
                     }
                     
