@@ -10,7 +10,7 @@
    
    <label class="item item-input">
       <span class="input-label">Telefono</span>
-      <input type="text" name="telefono" ng-model="persona.telefono" required>
+      <input type="tel" name="telefono" ng-model="persona.telefono" required>
    </label>
    
     <label class="item item-input">
@@ -39,7 +39,7 @@
    <div class="padding">
         <p ng-show="agregarForm.nombre.$error.required">Escriba el Nombre</p>
         <p ng-show="agregarForm.telefono.$error.required">Escriba el Telefono</p>
-        <p ng-show="agregarForm.direccion.$error.required">Escriba el Direccionl</p>
+        <p ng-show="agregarForm.direccion.$error.required">Escriba el Direccion</p>
         <p ng-show="agregarForm.email.$error.required">Escriba el Email</p>
         <p ng-show="agregarForm.ciudad.$error.required">Escriba el Ciudad</p>
         <p ng-show="agregarForm.sitioweb.$error.required">Escriba el Sitio web</p>
